@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        /*
+        What are the advantages of using JavaScript
+        1. Form validation can be done on the client side, which reduces the unnecessary round trips between 
+            the client and the server. This also means the load on the server is reduced and the application is 
+            more responsive.
+        2. JavaScript uses the client machine processing power.
+        3. With JavaScript partial page updates are possible i.e only portions of the page can be updated, 
+            without reloading the entire web form. This is commonly called as AJAX.
+        4. JavaScript can also be used to animate elements on a page. For example, show or hide elements 
+            and sections of the page.
+            
+            There are two main disadvantages of JavaScript. 
+                1. Security : JavaScript runs on the client machine. So a malicious user may use Javascript to do 
+                    a variety of things like tracking your browsing history, stealing passwords etc. 
+                    This is one of the main reasons why people disable JavaScript.
+
+                2. Browser Compatibility : Not all browsers treat the same piece of JavaScript in the same manner. 
+                    This means the functionality and the user interface may vary from browser to browser. 
+                    That is why cross-browser testing is very important. However, with JavaScript libraries like 
+                    jQuery Browser Compatibility is no longer a major issue.
+            */
+
+        alert("Hello");
+        // document.getElementById("myTextBox").style.backgroundColor = "red";
+        // above line will not work because script executes before textbox identified in browser DOM
+
+        var a = "Bond 00";
+        var b = 7;
+        var c = a + b;
+
+        //myvalue = getElementById("myTextBox").value;
+        alert(c);
+
+        function isEven() {
+            var number1 = document.getElementById("myTextBox").value;
+            var number = parseInt(number1);
+            if (number % 2 == 0) {
+                alert(number + " is Even");
+            }
+            else {
+                alert(number + " is Odd");
+            }
+        }
+
+        /*
+        Advantages of external JavaScript over inline JavaScript 
+
+        1.  Maintainability : JavaScript in external files can be referenced on multiple pages without having to 
+            duplicate the code inline on every page. If something has to change, you only have one place to change. 
+            So external JavaScript code can be reused and maintenance will be much easier.
+
+        2. Separation of Concerns : Storing JavaScript in a separate external .js file adheres to Separation of 
+            concerns design principle. In general it is a good practice to separate HTML, CSS and JavaScript as it 
+            makes it easier working with them. Also allows multiple developers to work simultaneously.
+
+        3. Performance : An external JavaScript file can be cached by the browser, where as an inline JavaScript 
+            on the page is loaded every time the page loads.
+        */
+        
+    </script>
+
+</head>
+<body>
+    <input type="text" id="myTextBox" value="Check Number" onclick="isEven()"/>
+    <script>
+        document.getElementById("myTextBox").style.backgroundColor = "red";
+    </script>
+</body>
+</html>
